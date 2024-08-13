@@ -1,20 +1,19 @@
 import {Link} from 'react-router-dom'
-import './Header.css'
+import './Header.scss'
 
 export default function Header(){
 
     return(
         <div className="Header">
              <div className="wrapper">
-                <div className="logo">BookShelf</div>
                 <nav>
                     <Link to='/home'>Home</Link>
                     <Link to='/about'>About</Link>
                     <Link to='/about'>Store</Link>
-                    <Link to='/'>Categories</Link>
+                    <Link to='/'>Contacts</Link>
                 </nav>
-                <div className="search">
-                    <input type="text"/>
+                <div className="login">
+                    <button>Log in</button>
                 </div>
             </div>
         </div>

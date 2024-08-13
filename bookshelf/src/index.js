@@ -7,15 +7,18 @@ import Header from './Pages/Header/Header';
 import Footer from './Pages/Footer/Footer';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
+import Sidebar from './Pages/Sidebar/Sidebar';
 
 const Root = () => {
   return(
     <div className='container'>
-      <header>
-        <Header />
-      </header>
       <main>
-        <Outlet />
+        <Sidebar />
+        <div className='main-layout'>
+          <Header />
+          <Outlet />
+        </div>
+        
       </main>
       <footer>
         <Footer />

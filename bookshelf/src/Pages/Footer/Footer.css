@@ -3,12 +3,16 @@
     background-color: rgb(12, 11, 11);
     position: relative;
 }
-.wrapper{
-
+.Footer .wrapper{
+    display: flex;
+    justify-content: center;
+  
 
 }
-.logo{
+.Footer .logo{
     color: #fff;
     font-size: 18px;
     font-weight: 800;
+    color: #ffffffcf;
+    margin: 20px 0;
 }

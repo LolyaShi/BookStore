@@ -1,0 +1,40 @@
+.Header{
+  
+    .wrapper{
+        width: 100%;
+        background-color: rgb(18, 17, 17);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        color: #fff;
+    }
+
+    nav{
+        flex: 0 1 80%;
+        display: flex;
+        justify-content: center;
+    }
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0 15px;
+        text-transform: uppercase;
+    }
+
+    .login{
+        margin-right: 20px;
+        button{
+            padding: 5px 20px;
+            font-size: 14px;
+ 
+            background-color: #fff;
+            color: black;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+    }
+
+}
