@@ -1,0 +1,32 @@
+.Categories{
+    h1{
+        text-align: center;
+    }
+    .container{
+        margin: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .categorie{
+            min-width: 25%;
+            padding: 10px;
+            border: solid 1px #fff;
+            border-radius: 15px;
+            margin: 10px;
+            transition: all .4s;
+
+            a{
+                color: #fff;
+                text-decoration: none;
+                transition: all .4s;
+            }
+            
+        }
+        .categorie:hover{
+            background-color: #fff;
+        }
+        .categorie:hover a{
+            color: black;
+        }
+    }
+}

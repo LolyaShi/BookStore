@@ -20,6 +20,7 @@ code {
   display: flex;
   flex-direction: column;
   height: auto;
+  color: #fff;
 }
 
 main{
@@ -29,5 +30,6 @@ main{
 }
 .main-layout{
   flex: 0 1 80%;
+  background-color: black;
 
 }

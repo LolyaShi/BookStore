@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react'
-import { fetchbestselers, fetchBooks } from '../../router'
+import { fetchbestselers } from '../../router'
 import './Home.scss'
 
 export default function Home(){
 
-    const [categories, setCategories] = useState([])
+
     const [bestsellers, setBestsellers] = useState([])
 
     const data = async() => {
-        const result = await fetchBooks()
-        setCategories(result)
         const responce = await fetchbestselers()
         console.log(responce)
         setBestsellers(responce.lists)
