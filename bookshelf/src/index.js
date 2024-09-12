@@ -10,6 +10,7 @@ import About from './Pages/About/About';
 import Sidebar from './Pages/Sidebar/Sidebar';
 import Bestsellers from './Pages/Bestsellers/Bestsellers';
 import Categories from './Pages/Categories/Categories'
+import CategoriePage from './Pages/Categories/CategoriePage';
 
 const Root = () => {
   return(
@@ -38,9 +39,15 @@ const router = createBrowserRouter(
         <Route path='/about' element={<About />} />
         <Route path='/bestsellers' element={<Bestsellers />} />
         <Route path='/categories' element={<Categories />} />
+        <Route path='/categories/:name' element={<CategoriePage />} loader={loader} />
     </Route>
   )
 );
+
+function loader({params}) {
+
+  return params.name  
+}
 
 
 

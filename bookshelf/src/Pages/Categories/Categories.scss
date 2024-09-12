@@ -30,3 +30,65 @@
         }
     }
 }
+
+.CategoriePage{
+    .container{
+        margin: 50px 0;
+        width: 100%;
+    }
+    .title{
+        text-align: center;
+    }
+    .list{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+
+        .list__item{
+            margin: 15px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #2420209c;
+            width: 90%;
+            padding: 10px;
+
+            img{
+                flex: 0 1 20%;
+                min-width: 20%;
+                height: auto;
+                object-fit: contain;
+    
+            }
+            .book_title{
+                flex: 0 1 60%;
+                margin: 0 30px;
+
+                p{
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+            }
+            .price{
+                flex: 0 1 20%;
+                align-self: flex-end;
+                margin-bottom: 10px;
+                text-align: right;
+
+                h3{
+                    font-size: 22px;
+                    line-height: 24px;
+                    padding: 0 5px;
+                }
+
+                button{
+                    padding: 10px 20px;
+                    color: #fff;
+                    font-size: 18px;
+                    background-color: #930f0f;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

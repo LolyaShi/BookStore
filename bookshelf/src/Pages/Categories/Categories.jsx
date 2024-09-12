@@ -22,7 +22,7 @@ export default function Sidebar(){
                 {categories.map(el => {
                     return(
                         <div className='categorie'>
-                            <Link to='/'>{el.list_name}</Link>
+                            <Link to={`/categories/${el.list_name_encoded}`}>{el.list_name}</Link>
                         </div>
                     )
                 })}
