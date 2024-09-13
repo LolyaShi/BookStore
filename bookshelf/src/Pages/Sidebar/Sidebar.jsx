@@ -1,9 +1,16 @@
 
+import {  useRef, useState } from 'react'
 import './Sidebar.scss'
 import { Link } from 'react-router-dom'
 
 
 export default function Sidebar(){
+    const search = useRef()
+    const [name, setName] =useState('')
+    const writeName = () => {
+        console.log(search.current.value)
+        setName(search.current.value)
+    }
 
 
     return(
@@ -13,7 +20,8 @@ export default function Sidebar(){
                 BookShelf
                 </div>
                 <div className="search">
-                    <input type="text"/>
+                    <input onChange={writeName} ref={search} type="text" placeholder='search...'/>
+                    <button ><Link to={`/books/${name}`}>Go</Link></button>
                 </div>
                 <nav>
                     <Link to='/categories'>Categories</Link>

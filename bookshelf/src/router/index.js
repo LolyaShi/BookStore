@@ -10,6 +10,8 @@ const TOP_BOOKS_URL = `https://api.nytimes.com/svc/books/v3/lists/overview.json?
 const BESTSELLERS_URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${API_KEY}`
 const LIST_URL = (categorie) => { return `https://api.nytimes.com/svc/books/v3/lists/${categorie}.json?api-key=${API_KEY}`}
 const AUTHORS_URL=  `https://api.bigbookapi.com/search-books?api-key=${NEW_KEY}`
+const BOOK_SEARCH_URL = (name) => {return `https://api.bigbookapi.com/search-books?query=${name}&api-key=${NEW_KEY}`}
+const BOOK_ID_URL = (id) => {return `https://api.nytimes.com/svc/books/v3/reviews.json?isbn=${id}&api-key=${API_KEY}`}
 
 export async function fetchBooks(){
     const response = await axios.get(MAIN_URL)
@@ -29,6 +31,11 @@ export async function fetchBookList(name){
     const response = await axios.get(LIST_URL(name))
     console.log(response)
     return response.data.results
+}
+export async function findBook(id){
+    const response = await axios.get(BOOK_SEARCH_URL(id))
+    console.log(response)
+    return response.data.books
 }
 
 

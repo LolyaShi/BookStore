@@ -11,6 +11,7 @@ import Sidebar from './Pages/Sidebar/Sidebar';
 import Bestsellers from './Pages/Bestsellers/Bestsellers';
 import Categories from './Pages/Categories/Categories'
 import CategoriePage from './Pages/Categories/CategoriePage';
+import BookPage from './Pages/BookPage/BookPage';
 
 const Root = () => {
   return(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
         <Route path='/bestsellers' element={<Bestsellers />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/categories/:name' element={<CategoriePage />} loader={loader} />
+        <Route path='/books/:id' element={<BookPage />} loader={bookLoader} />
     </Route>
   )
 );
@@ -47,6 +49,9 @@ const router = createBrowserRouter(
 function loader({params}) {
 
   return params.name  
+}
+function bookLoader({params}){
+  return params.id
 }
 
 

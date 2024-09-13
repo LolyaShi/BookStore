@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Categories.scss'
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import { fetchBookList } from '../../router'
 
 
@@ -30,10 +30,10 @@ export default function CategoriePage(){
                 <div className="list">
                     {list.map((el) => {
                         return(
-                            <div className="list__item">
+                            <div className="list__item" key={el.primary_isbn10}>
                                 <img src={el.book_image} alt="book-cover" />
                                 <div className="book_title">
-                                    <h2>{el.title}</h2>
+                                    <Link to={`/books/${el.primary_isbn13}`}><h2>{el.title}</h2></Link>
                                     <h3>{el.author}</h3>
                                     <p>{el.description}</p>
                                 </div>
