@@ -21,7 +21,9 @@ export default function Sidebar(){
                 </div>
                 <div className="search">
                     <input onChange={writeName} ref={search} type="text" placeholder='search...'/>
-                    <button ><Link to={`/books/${name}`}>Go</Link></button>
+                    <button onClick={() => {
+                        search.current.value = ''
+                    }} ><Link to={`/books/${name}`}>Go</Link></button>
                 </div>
                 <nav>
                     <Link to='/categories'>Categories</Link>

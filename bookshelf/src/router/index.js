@@ -12,6 +12,7 @@ const LIST_URL = (categorie) => { return `https://api.nytimes.com/svc/books/v3/l
 const AUTHORS_URL=  `https://api.bigbookapi.com/search-books?api-key=${NEW_KEY}`
 const BOOK_SEARCH_URL = (name) => {return `https://api.bigbookapi.com/search-books?query=${name}&api-key=${NEW_KEY}`}
 const BOOK_ID_URL = (id) => {return `https://api.nytimes.com/svc/books/v3/reviews.json?isbn=${id}&api-key=${API_KEY}`}
+const BOOK_INFO_URL = (id) => {return `https://api.bigbookapi.com/${id}?api-key=${NEW_KEY}`}
 
 export async function fetchBooks(){
     const response = await axios.get(MAIN_URL)
@@ -44,4 +45,8 @@ export async function fetchAuthors() {
     const response = await axios.get(AUTHORS_URL)
     return response
     
+}
+export async function fetchBookInfo(id){
+    const result =await axios.get(BOOK_INFO_URL(id))
+    return result
 }

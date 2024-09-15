@@ -1,0 +1,54 @@
+.Page{
+  
+    .container{
+
+
+        .book_info{
+            display: flex;
+            justify-content: space-around;
+            align-items:flex-start;
+            margin: 50px;
+
+            img{
+                flex: 0 1 30%;
+                height: auto;
+                object-fit: cover;
+            }
+            .about{
+                flex: 0 1 60%;
+                padding: 10px;
+                margin-left: 20px;
+            }
+        }
+
+        .book_description{
+            margin: 0 50px 50px;
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        .book_details{
+
+            h3{
+                color: rgb(169, 24, 24);
+            }
+            
+            span{
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 24px;
+                padding: 0 10px;
+            }
+
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}

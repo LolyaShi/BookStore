@@ -20,13 +20,29 @@
         .search{
             margin-top: 30px;
             width: 80%;
+            display: flex;
+            align-items: center;
             input{
-                width: 100%;
-                border-radius: 20px;
+                flex: 0 1 70%;
+                border-radius: 20px 0 0 20px;
                 border: solid 1px #fff;
                 font-size: 16px;
                 padding: 5px 10px;
                 line-height: 18px;
+            }
+
+            button{
+                flex: 0 1 30%;
+                padding: 5px 10px;
+                font-size: 16px;
+                line-height: 18px;
+                background-color: #a01c1c;
+                border-radius: 0 20px 20px 0;
+
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
             
         }
