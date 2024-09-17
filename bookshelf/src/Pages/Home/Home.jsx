@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchbestselers } from '../../router'
+import { Link } from 'react-router-dom'
 import './Home.scss'
 
 export default function Home(){
@@ -37,14 +38,18 @@ export default function Home(){
                                 <div className='books'>
                                     {el.books.map((book) => {
                                         return(
-                                            <div className='book_block'>
-                                                <img src={book.book_image} alt="cover" />
-                                                <div className='about_book'>
-                                                    <p className='title'>{book.title}</p>
-                                                    <p className='author'>{book.author}</p>
+                                            
+                                                <div className='book_block'>
+                                                    <Link to={`/categories/${el.list_name_encoded}/${book.primary_isbn10}`}>
+                                                    <img src={book.book_image} alt="cover" />
+                                                    </Link>
+                                                    <div className='about_book'>
+                                                        <p className='title'>{book.title}</p>
+                                                        <p className='author'>{book.author}</p>
+                                                    </div>
+                                                    
                                                 </div>
-                                                
-                                            </div>
+
                                         )
                                     })}
                                 </div>

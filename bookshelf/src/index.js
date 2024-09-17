@@ -13,6 +13,8 @@ import Categories from './Pages/Categories/Categories'
 import CategoriePage from './Pages/Categories/CategoriePage';
 import SearchPage from './Pages/SearchPage/SearchPage';
 import BookPage from './Pages/BookPage/BookPage';
+import CategorieBook from './Pages/BookPage/CategorieBook';
+import { fetchBookList } from './router';
 
 const Root = () => {
   return(
@@ -44,6 +46,7 @@ const router = createBrowserRouter(
         <Route path='/categories/:name' element={<CategoriePage />} loader={loader} />
         <Route path='/books/:name' element={<SearchPage />} loader={bookLoader} />
         <Route path='/books/about/:id' element={<BookPage />} loader={infoLoader} />
+        <Route path='/categories/:name/:bookId' element={<CategorieBook />} loader={categorieLoader} />
     </Route>
   )
 );
@@ -57,6 +60,12 @@ function bookLoader({params}){
 }
 function infoLoader({params}){
   return params.id
+}
+async function categorieLoader({params}){
+  const bookList = await fetchBookList(params.name)
+  const book = bookList.books.filter((el) => {return el.primary_isbn10 === params.bookId })
+  console.log(book)
+  return book
 }
 
 

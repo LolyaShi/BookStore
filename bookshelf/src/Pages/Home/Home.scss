@@ -46,6 +46,10 @@
                 .books{
                     display: flex;
                     
+                    a{
+                        text-decoration: none;
+                        
+                    }
                 }
 
                 .book_block{

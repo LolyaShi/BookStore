@@ -27,8 +27,8 @@ export default function Sidebar(){
                 </div>
                 <nav>
                     <Link to='/categories'>Categories</Link>
-                    <Link to='/'>Authors</Link>
                     <Link to='/bestsellers'>Bestsellers</Link>
+                    <Link to='/categories/audio-fiction'>Audiobooks</Link>
                 </nav>
             </div>
         </div>

@@ -12,7 +12,7 @@ export default function CategoriePage(){
     const [title, setTitle] = useState()
     const data = async() => {
         const result = await fetchBookList(name)
-        setTitle(result.list_name)
+        setTitle(result.list_name_encoded)
         setList(result.books)
     }
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function CategoriePage(){
                             <div className="list__item" key={el.primary_isbn10}>
                                 <img src={el.book_image} alt="book-cover" />
                                 <div className="book_title">
-                                    <Link to={`/books/${el.primary_isbn13}`}><h2>{el.title}</h2></Link>
+                                    <Link to={`/categories/${title}/${el.primary_isbn10}`}><h2>{el.title}</h2></Link>
                                     <h3>{el.author}</h3>
                                     <p>{el.description}</p>
                                 </div>
