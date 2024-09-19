@@ -10,9 +10,18 @@
 
 }
 .Footer .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 800;
     color: #ffffffcf;
     margin: 20px 0;
+}
+.Footer img{
+    max-width: 40px;
+    height: auto;
+    filter: invert();
+    margin-right: 15px;
 }

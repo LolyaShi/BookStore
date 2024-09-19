@@ -9,9 +9,9 @@ const MAIN_URL = `https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=
 const TOP_BOOKS_URL = `https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${API_KEY}`
 const BESTSELLERS_URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${API_KEY}`
 const LIST_URL = (categorie) => { return `https://api.nytimes.com/svc/books/v3/lists/${categorie}.json?api-key=${API_KEY}`}
-const AUTHORS_URL=  `https://api.bigbookapi.com/search-books?api-key=${NEW_KEY}`
+const AUTHORS_URL=  `https://api.bigbookapi.com/search-books?id=13031078&api-key=${NEW_KEY}`
 const BOOK_SEARCH_URL = (name) => {return `https://api.bigbookapi.com/search-books?query=${name}&api-key=${NEW_KEY}`}
-const BOOK_ID_URL = (id) => {return `https://api.nytimes.com/svc/books/v3/reviews.json?isbn=${id}&api-key=${API_KEY}`}
+//const BOOK_ID_URL = (id) => {return `https://api.nytimes.com/svc/books/v3/reviews.json?isbn=${id}&api-key=${API_KEY}`}
 const BOOK_INFO_URL = (id) => {return `https://api.bigbookapi.com/${id}?api-key=${NEW_KEY}`}
 
 export async function fetchBooks(){

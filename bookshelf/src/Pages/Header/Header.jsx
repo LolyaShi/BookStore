@@ -9,8 +9,8 @@ export default function Header(){
                 <nav>
                     <Link to='/home'>Home</Link>
                     <Link to='/about'>About</Link>
-                    <Link to='/about'>Store</Link>
-                    <Link to='/'>Contacts</Link>
+                    <Link to='/store'>Store</Link>
+                    <Link to='/contacts'>Contacts</Link>
                 </nav>
                 <div className="login">
                     <button>Log in</button>

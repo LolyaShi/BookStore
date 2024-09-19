@@ -17,7 +17,7 @@ export default function Sidebar(){
         <div className="Sidebar">
             <div className="container">
                 <div className="logo">
-                BookShelf
+                <Link to='/home'>BookShelf</Link>
                 </div>
                 <div className="search">
                     <input onChange={writeName} ref={search} type="text" placeholder='search...'/>

@@ -15,6 +15,8 @@ import SearchPage from './Pages/SearchPage/SearchPage';
 import BookPage from './Pages/BookPage/BookPage';
 import CategorieBook from './Pages/BookPage/CategorieBook';
 import { fetchBookList } from './router';
+import Contacts from './Pages/Contacts/Contacts';
+import Store from './Pages/Store/Store';
 
 const Root = () => {
   return(
@@ -41,6 +43,8 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/store' element={<Store />} />
         <Route path='/bestsellers' element={<Bestsellers />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/categories/:name' element={<CategoriePage />} loader={loader} />

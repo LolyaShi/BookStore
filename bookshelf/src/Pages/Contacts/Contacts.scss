@@ -1,0 +1,22 @@
+.Contacts{
+
+    .wrapper{
+        margin: 50px;
+        font-size: 20px;
+        line-height: 25px;
+
+        h1{
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        ul{
+            list-style: none;
+
+            span{
+                margin-right: 10px;
+                font-weight: 700;
+            }
+        }
+    }
+}
