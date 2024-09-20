@@ -21,6 +21,8 @@ code {
   flex-direction: column;
   height: auto;
   color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 main{
@@ -31,5 +33,6 @@ main{
 .main-layout{
   flex: 0 1 80%;
   background-color: black;
-
+  position: relative;
+  z-index: 1;
 }
