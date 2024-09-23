@@ -1,6 +1,11 @@
+import { logIn } from '../../store'
 import './Login.scss'
+import {useDispatch } from 'react-redux'
 
 export default function Login({open, close}){
+
+    //const login = useSelector((state) => {state.login})
+    const dispatch = useDispatch()
 
     if(open){
         return(
@@ -21,7 +26,9 @@ export default function Login({open, close}){
                             <label htmlFor="pass">Password</label>
                             <input id="pass" type="password" />
                         </div>
-                        <button>Login</button>
+                        <button onClick={(e) => {
+                          
+                            dispatch(logIn())}}>Login</button>
                     </form>
                     </div>
                     

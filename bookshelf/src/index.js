@@ -18,8 +18,15 @@ import { fetchBookList } from './router';
 import Contacts from './Pages/Contacts/Contacts';
 import Store from './Pages/Store/Store';
 
+
+import { Provider } from 'react-redux';
+import store from './store/store';
+
+
 const Root = () => {
+  
   return(
+   
     <div className='container'>
       <main>
         <Sidebar />
@@ -34,12 +41,13 @@ const Root = () => {
       </footer>
       
     </div>
+    
   )
 }
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Root />}>
+    <Route path='/' element={ <Provider store={store}><Root /></Provider>}>
         <Route index element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -77,7 +85,7 @@ async function categorieLoader({params}){
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <RouterProvider router={router} />
+  <RouterProvider router={router}/>
 
 );
 

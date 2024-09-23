@@ -11,7 +11,7 @@
     }
 
     nav{
-        flex: 0 1 80%;
+        flex: 1 1 80%;
         display: flex;
         justify-content: center;
     }
@@ -31,6 +31,9 @@
 
     .login{
         margin-right: 20px;
+        display: flex;
+        align-items: center;
+
         button{
             padding: 5px 20px;
             font-size: 14px;
@@ -42,4 +45,35 @@
         }
     }
 
+}
+
+.UserPanel{
+    display: flex;
+    align-items: center;
+
+    .user{
+        display: flex;
+        align-items: center;
+
+        img{
+            max-width: 40px;
+            filter: invert(100%);
+        }
+    }
+
+    img{
+        max-width: 30px;
+        filter: invert(100%);
+    }
+
+    button{
+        padding: 5px 20px;
+        font-size: 14px;
+
+        background-color: #fff;
+        color: black;
+        border-radius: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
 }
