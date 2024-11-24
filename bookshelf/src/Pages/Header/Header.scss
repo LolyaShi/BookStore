@@ -50,14 +50,41 @@
 .UserPanel{
     display: flex;
     align-items: center;
+    position: relative;
 
     .user{
         display: flex;
         align-items: center;
+        margin: 0 10px;
 
         img{
-            max-width: 40px;
+            max-width: 30px;
             filter: invert(100%);
+            margin: 0 5px;
+        }
+
+        p{
+            transition: all .4s;
+        }
+        p:hover{
+            color: #a01c1c;
+            cursor: pointer;
+        }
+    }
+
+    .user:hover + .user_menu{
+        display: block;
+    }
+    .user_menu{
+        position: absolute;
+        top: 100%;
+        background-color: rgb(64, 61, 61);
+        padding: 5px;
+        display: none;
+
+        ul{
+            list-style: none;
+            margin: none;
         }
     }
 

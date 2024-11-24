@@ -21,9 +21,12 @@ import Store from './Pages/Store/Store';
 
 import { Provider } from 'react-redux';
 import store from './store/store';
+import useToken from './components/useToken';
 
 
 const Root = () => {
+
+  const {token, setToken} = useToken()
   
   return(
    
@@ -31,7 +34,7 @@ const Root = () => {
       <main>
         <Sidebar />
         <div className='main-layout'>
-          <Header />
+          <Header setToken={setToken} token = {token} />
           <Outlet />
         </div>
         
