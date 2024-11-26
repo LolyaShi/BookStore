@@ -20,7 +20,7 @@ export default function Header({setToken, token}){
                 </nav>
                 <div className="login">
                     {/*<button onClick={() => {setModal(!modal)}}>Log in</button>*/}
-                    <UserPanel openModal={() => {setModal(!modal)}} token={token}/>
+                    <UserPanel openModal={() => {setModal(!modal)}} token={token} setToken={setToken}/>
                 </div>
             </div>
 

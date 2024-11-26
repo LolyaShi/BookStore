@@ -34,7 +34,7 @@ const Root = () => {
       <main>
         <Sidebar />
         <div className='main-layout'>
-          <Header setToken={setToken} token = {token} />
+          <Header setToken={setToken} token = {token}/>
           <Outlet />
         </div>
         

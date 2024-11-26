@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { logIn } from '../../store'
+
 import './Login.scss'
-import {useDispatch } from 'react-redux'
+
 import PropTypes from 'prop-types';
 
 async function LoginUser(data){
@@ -24,9 +24,9 @@ export default function Login({open, close, setToken}){
         e.preventDefault()
         const token = await LoginUser({login, pwd})
         setToken(token)
+        close(false)
     }
-    //const login = useSelector((state) => {state.login})
-    const dispatch = useDispatch()
+  
 
     if(open){
         return(
