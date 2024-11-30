@@ -22,11 +22,14 @@ import Store from './Pages/Store/Store';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import useToken from './components/useToken';
+import useCart from './components/useCart';
+import Cart from './Pages/Cart/Cart';
 
 
 const Root = () => {
 
   const {token, setToken} = useToken()
+  const {cart, setCart} = useCart()
   
   return(
    
@@ -35,7 +38,7 @@ const Root = () => {
         <Sidebar />
         <div className='main-layout'>
           <Header setToken={setToken} token = {token}/>
-          <Outlet />
+          <Outlet setCart={setCart}  />
         </div>
         
       </main>
@@ -49,6 +52,7 @@ const Root = () => {
 }
 
 const router = createBrowserRouter(
+  
   createRoutesFromElements(
     <Route path='/' element={ <Provider store={store}><Root /></Provider>}>
         <Route index element={<Home />} />
@@ -62,6 +66,7 @@ const router = createBrowserRouter(
         <Route path='/books/:name' element={<SearchPage />} loader={bookLoader} />
         <Route path='/books/about/:id' element={<BookPage />} loader={infoLoader} />
         <Route path='/categories/:name/:bookId' element={<CategorieBook />} loader={categorieLoader} />
+        <Route path='/cart' element={<Cart />} />
     </Route>
   )
 );

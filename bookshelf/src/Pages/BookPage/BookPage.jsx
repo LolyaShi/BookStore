@@ -3,7 +3,9 @@ import { useLoaderData } from "react-router-dom"
 import { fetchBookInfo } from "../../router"
 import './BookPage.scss'
 
+
 export default function BookPage(){
+  
 
     const id = useLoaderData()
 

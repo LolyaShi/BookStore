@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import './Header.scss'
 
 
@@ -26,7 +27,7 @@ export default function UserPanel({openModal, token, setToken}){
                     </div>
                 </div>
                 
-                <img src="./cart.svg" alt="cart" />
+                <Link to={'/cart'}><img src="./cart.svg" alt="cart" /></Link>
             </div>
         )
     }

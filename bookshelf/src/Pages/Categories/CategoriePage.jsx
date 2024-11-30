@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './Categories.scss'
 import { Link, useLoaderData } from "react-router-dom"
 import { fetchBookList } from '../../router'
+import useCart from '../../components/useCart'
 
 
 
@@ -22,7 +23,7 @@ export default function CategoriePage(){
     }, [])
 
 
-    
+    const {cart, setCart} = useCart([])
     console.log(name)
 
     return(
@@ -41,7 +42,7 @@ export default function CategoriePage(){
                                 </div>
                                 <div className="price">
                                     <h3>{el.price}</h3>
-                                    <button>Add to cart</button>
+                                    <button onClick={() => setCart(el.primary_isbn10, el.title)}>Add to cart</button>
                                 </div>
                             </div>
                         )

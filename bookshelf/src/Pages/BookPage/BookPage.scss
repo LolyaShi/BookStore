@@ -66,13 +66,37 @@
                 color: #fff;
             }
 
-            button{
+            div{
+                display: flex;
+                align-items: center;
+            }
+
+            .add-btn{
                 padding: 10px 20px;
                 color: #fff;
                 font-size: 18px;
                 background-color: #930f0f;
                 border-radius: 5px;
+                cursor: pointer;
             }
+
+            button{
+                background-color: #930f0f;
+                padding: 5px;
+                img{
+                    width: 25px;
+                    max-width: 100%;
+                }
+                .basic{
+                    filter: invert(0);
+                }
+                .light{
+                    
+                    filter: invert(100%);
+                }
+            }
+
+
         }
     }
 }
