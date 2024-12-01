@@ -10,9 +10,16 @@ export default function useCart(){
 
     const [cart, setCart] = useState(getCart())
 
-    const addToCart = (id, name) => {
-        localStorage.setItem('cart', JSON.stringify([...cart, {id, name}]))
-        setCart([...cart, {id, name}])
+    const addToCart = (action, id, path, title) => {
+        if(action === 'add'){
+            localStorage.setItem('cart', JSON.stringify([...cart, {id, path, title}]))
+            setCart([...cart, {id, path, title}])
+        }
+        else{
+            let newCart = cart.filter((el) => {return el.id !== id})
+            localStorage.setItem('cart', JSON.stringify(newCart))
+            setCart(newCart)
+        }
     }
 
     return{

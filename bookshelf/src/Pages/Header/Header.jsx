@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Login from '../Login/Login'
 import UserPanel from './UserPanel'
 
-export default function Header({setToken, token}){
+export default function Header({setToken, token, cart}){
 
     const [modal, setModal] = useState(false)
     
@@ -20,7 +20,7 @@ export default function Header({setToken, token}){
                 </nav>
                 <div className="login">
                     {/*<button onClick={() => {setModal(!modal)}}>Log in</button>*/}
-                    <UserPanel openModal={() => {setModal(!modal)}} token={token} setToken={setToken}/>
+                    <UserPanel openModal={() => {setModal(!modal)}} token={token} setToken={setToken} cart={cart}/>
                 </div>
             </div>
 

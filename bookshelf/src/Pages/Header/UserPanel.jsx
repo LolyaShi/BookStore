@@ -2,12 +2,19 @@
 import { Link } from 'react-router-dom'
 import './Header.scss'
 
+import { useEffect, useState } from 'react'
 
-export default function UserPanel({openModal, token, setToken}){
+
+export default function UserPanel({openModal, token, setToken, cart}){
 
 
     console.log(token)
-   
+    // const [cartNumber, setCartNumber] = useState(cart.length)
+
+
+    // useEffect(() => {
+    //     setCartNumber(cart.length)
+    // }, [])
     
     if(token){
         return(
@@ -27,7 +34,10 @@ export default function UserPanel({openModal, token, setToken}){
                     </div>
                 </div>
                 
-                <Link to={'/cart'}><img src="./cart.svg" alt="cart" /></Link>
+                <Link to={'/cart'}>
+                    <img src="./cart.svg" alt="cart" />
+                    <span className='cartNumber'>{cart.length}</span>
+                </Link>
             </div>
         )
     }

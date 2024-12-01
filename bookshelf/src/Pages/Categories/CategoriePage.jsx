@@ -42,7 +42,11 @@ export default function CategoriePage(){
                                 </div>
                                 <div className="price">
                                     <h3>{el.price}</h3>
-                                    <button onClick={() => setCart(el.primary_isbn10, el.title)}>Add to cart</button>
+                                    <button onClick={() =>{ 
+                                        setCart('add', el.primary_isbn10, path, el.title)
+                                        window.location.reload(false)
+                                        }
+                                    }>Add to cart</button>
                                 </div>
                             </div>
                         )

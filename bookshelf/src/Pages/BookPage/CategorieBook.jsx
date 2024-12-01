@@ -9,7 +9,7 @@ export default function CategorieBook(){
 
     const book = useLoaderData()
     console.log(book)
-    const info = book[0]
+    const info = book.book[0]
 
     const [like, setLike] = useState('basic')
     const {cart, setCart} = useCart([])
@@ -51,7 +51,10 @@ export default function CategorieBook(){
                         <h3>{info.price}</h3>
                         <div>
                             <button className="add-btn"
-                                onClick={() => setCart(info.primary_isbn10, info.title)}
+                                onClick={() => {
+                                    setCart('add', info.primary_isbn10, book.path, info.title)
+                                    window.location.reload(false)
+                                }}
                             >Add to cart</button>
                             <button onClick={addLike}>
                                 <img className={like} src='/heart-15.png' alt="like" />

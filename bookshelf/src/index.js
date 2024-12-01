@@ -37,7 +37,7 @@ const Root = () => {
       <main>
         <Sidebar />
         <div className='main-layout'>
-          <Header setToken={setToken} token = {token}/>
+          <Header setToken={setToken} token = {token} cart={cart}/>
           <Outlet setCart={setCart}  />
         </div>
         
@@ -85,7 +85,7 @@ async function categorieLoader({params}){
   const bookList = await fetchBookList(params.name)
   const book = bookList.books.filter((el) => {return el.primary_isbn10 === params.bookId })
   console.log(book)
-  return book
+  return {book, path: params.name}
 }
 
 
