@@ -13,6 +13,18 @@
                 justify-content: space-between;
                 align-items: center;
 
+                div{
+                    display: flex;
+                    align-items: center;
+
+                    .price{
+                        color: #930f0f;
+                        font-weight: 700;
+                        margin: 0 10px;
+                        
+                    }
+                }
+
                 button{
                     padding: 5px 10px;
                     background-color: #fff;
@@ -26,7 +38,7 @@
                 }
             }
            
-
+            
 
             a{
                 color: #fff;
@@ -48,7 +60,12 @@
         }
     }
 
-
+    .price-block{
+        text-align: right;
+        margin: 0 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
     .pay-block{
         display: flex;
         justify-content: center;

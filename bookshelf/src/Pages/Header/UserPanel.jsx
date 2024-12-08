@@ -2,19 +2,9 @@
 import { Link } from 'react-router-dom'
 import './Header.scss'
 
-import { useEffect, useState } from 'react'
-
 
 export default function UserPanel({openModal, token, setToken, cart}){
 
-
-    console.log(token)
-    // const [cartNumber, setCartNumber] = useState(cart.length)
-
-
-    // useEffect(() => {
-    //     setCartNumber(cart.length)
-    // }, [])
     
     if(token){
         return(
@@ -28,7 +18,7 @@ export default function UserPanel({openModal, token, setToken, cart}){
                         <ul>
                             <li>My Profile</li>
                             <li>My favorite</li>
-                            <li>My books</li>
+                            <li><Link to={'/mybooks'}>My books</Link></li>
                             <li onClick={() => {setToken(false)}}>Log out</li>
                         </ul>
                     </div>

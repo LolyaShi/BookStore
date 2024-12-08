@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom"
 import './BookPage.scss'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import useCart from "../../components/useCart"
 
 
@@ -13,11 +13,25 @@ export default function CategorieBook(){
 
     const [like, setLike] = useState('basic')
     const {cart, setCart} = useCart([])
+    const [btn, setBtn] = useState('Add to cart')
 
     function addLike(){
         if (like == 'basic' ) setLike('light')
             else setLike('basic')
     }
+
+    function addToCart(){
+        setCart('add', info.primary_isbn10, book.path, info.title, info.price)
+         window.location.reload(false)
+    }
+
+    useEffect(() => {
+        for(let item of cart){
+            if(item.id === info.primary_isbn10){
+                setBtn('In cart')
+            }
+        }
+    }, [])
 
     return(
         <div className="Page">
@@ -50,13 +64,16 @@ export default function CategorieBook(){
                     <div className="price">
                         <h3>{info.price}</h3>
                         <div>
+                            {(btn == 'In cart') ? (
+                                <button className="add-btn" style={{background:'gray'}} disabled
+                                onClick={() => { addToCart() }}
+                            >{btn}</button>
+                            ) : 
                             <button className="add-btn"
-                                onClick={() => {
-                                    setCart('add', info.primary_isbn10, book.path, info.title)
-                                    window.location.reload(false)
-                                }}
-                            >Add to cart</button>
-                            <button onClick={addLike}>
+                                onClick={() => { addToCart() }}
+                            >{btn}</button>}
+                            
+                            <button onClick={addLike} >
                                 <img className={like} src='/heart-15.png' alt="like" />
                                 
                             </button>

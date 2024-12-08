@@ -2,16 +2,63 @@
 import useCart from "../../components/useCart"
 import { Link } from "react-router-dom"
 import './Cart.scss'
+import { useEffect, useState } from "react"
+
+
 
 
 export default function Cart(){
 
+   
+
+    // function boughtBooks(data){
+    //      fetch('https://jsonplaceholder.typicode.com/users/1', {
+    //         method: 'PATCH',
+    //         headers: {
+    //           'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({username: data})
+    //       })
+    //       .then(data => console.log(data.json()))
+    // }
+
     const {cart, setCart} = useCart()
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const deleteItem = (id) => {
          setCart('remove', id)
          window.location.reload(false)
     }
+
+    const countPrice = () => {
+        let sum = 0
+        for(let el of cart){
+            
+            sum += Number(el.price)
+
+        }
+       
+        setTotalPrice(sum)
+        console.log(sum)
+    }
+
+    const addToMyBooks = () => {
+        const books = JSON.parse(localStorage.getItem('myBooks'))
+        console.log(books)
+        if(books == null){
+            localStorage.setItem('myBooks', JSON.stringify(cart))
+        }
+        else{
+            localStorage.setItem('myBooks', JSON.stringify([...books, cart]))
+        }
+         
+         
+         setCart('delete')
+    }
+
+    useEffect(() => {
+        countPrice()
+    }, cart)
 
     if(cart.length == 0){
         return (
@@ -32,7 +79,11 @@ export default function Cart(){
                                     <li className="item" key={item.id}>
                                         <div className="item-content">
                                             <Link to={`/categories/${item.path}/${item.id}`}>{item.title}</Link>
-                                            <button onClick={() => {deleteItem(item.id)}}>X</button>
+                                            <div>
+                                                <div className="price">{item.price}</div>
+                                                <button onClick={() => {deleteItem(item.id)}}>X</button>
+                                            </div>
+                                           
                                         </div>
                                         
                                     </li>
@@ -40,8 +91,11 @@ export default function Cart(){
                             })}
                         </ol>
                     </div>
+                    <div className="price-block">
+                        <p>Total price: {totalPrice}$</p>
+                    </div>
                     <div className="pay-block">
-                        <button className="buy-btn">Buy books</button>
+                        <button className="buy-btn" onClick={ () => addToMyBooks()}>Buy books</button>
                     </div>
                     
                 </div>

@@ -26,12 +26,23 @@ export default function CategoriePage(){
     const {cart, setCart} = useCart([])
     console.log(name)
 
+    const[btn, setBtn] = useState('Add to cart')
+
+    // useEffect(() => {
+    //     for(let item of cart){
+    //         if(item.id === el.primary_isbn10){
+    //             setBtn('In cart')
+    //         }
+    //     }
+    // }, [])
+
     return(
         <div className="CategoriePage">
             <div className="container">
                 <h1 className="title">{title}</h1>
                 <div className="list">
                     {list.map((el) => {
+
                         return(
                             <div className="list__item" key={el.primary_isbn10}>
                                 <img src={el.book_image} alt="book-cover" />
@@ -42,11 +53,22 @@ export default function CategoriePage(){
                                 </div>
                                 <div className="price">
                                     <h3>{el.price}</h3>
-                                    <button onClick={() =>{ 
-                                        setCart('add', el.primary_isbn10, path, el.title)
+                                    {(cart.filter(item => {return item.id === el.primary_isbn10  }).length > 0) ? 
+                                    <button disabled style={{background: 'gray'}} onClick={() =>{ 
+                                        setCart('add', el.primary_isbn10, path, el.title, el.price)
                                         window.location.reload(false)
                                         }
-                                    }>Add to cart</button>
+                                    }> In cart</button> : 
+                                    <button onClick={() =>{ 
+                                        setCart('add', el.primary_isbn10, path, el.title, el.price)
+                                        window.location.reload(false)
+                                        }
+                                    }> Add to cart</button>}
+                                    {/* <button onClick={() =>{ 
+                                        setCart('add', el.primary_isbn10, path, el.title, el.price)
+                                        window.location.reload(false)
+                                        }
+                                    }> Add to cart</button> */}
                                 </div>
                             </div>
                         )

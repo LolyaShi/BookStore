@@ -24,6 +24,7 @@ import store from './store/store';
 import useToken from './components/useToken';
 import useCart from './components/useCart';
 import Cart from './Pages/Cart/Cart';
+import MyBook from './Pages/Profile/MyBooks/MyBooks';
 
 
 const Root = () => {
@@ -67,6 +68,7 @@ const router = createBrowserRouter(
         <Route path='/books/about/:id' element={<BookPage />} loader={infoLoader} />
         <Route path='/categories/:name/:bookId' element={<CategorieBook />} loader={categorieLoader} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/mybooks' element={<MyBook />} />
     </Route>
   )
 );
