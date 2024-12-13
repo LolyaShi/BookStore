@@ -49,11 +49,12 @@ export default function Cart(){
             localStorage.setItem('myBooks', JSON.stringify(cart))
         }
         else{
-            localStorage.setItem('myBooks', JSON.stringify([...books, cart]))
+            localStorage.setItem('myBooks', JSON.stringify(books.concat(cart)))
         }
          
          
          setCart('delete')
+         window.location.reload(false)
     }
 
     useEffect(() => {

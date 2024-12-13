@@ -16,8 +16,8 @@ export default function UserPanel({openModal, token, setToken, cart}){
                     <p>Profile</p>
                     <div className="user_menu">
                         <ul>
-                            <li>My Profile</li>
-                            <li>My favorite</li>
+                            <li><Link to={'/myfavorite'}>My Profile</Link></li> 
+                            <li><Link to={'/myfavorite'}>My favorite</Link></li>
                             <li><Link to={'/mybooks'}>My books</Link></li>
                             <li onClick={() => {setToken(false)}}>Log out</li>
                         </ul>

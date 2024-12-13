@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import './MyBooks.scss'
 
 export default function MyBook(){
 
@@ -11,13 +13,26 @@ export default function MyBook(){
     console.log(myBooks)
 
     return(
-        <div>
+        <div className="MyBooks">
             <h1>My books</h1>
-            {myBooks.map(item => {
-                return (
-                    <div>{item.title}</div>
-                )
-            })}
+            <ul className="book-list">
+                {myBooks.map(item => {
+                    return (
+                        <li className="item" key={item.id}>
+                            <div className="item-content">
+                                 <Link to={`/categories/${item.path}/${item.id}`}>{item.title}</Link>
+                                 <div>
+                                     <div className="price">{item.price}</div>
+                                    
+                                 </div>
+                                           
+                            </div>
+                                        
+                         </li>
+                    )
+                })}
+            </ul>
+           
         </div>
     )
 }

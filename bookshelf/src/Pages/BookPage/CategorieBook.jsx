@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom"
 import './BookPage.scss'
 import { useEffect, useState } from "react"
 import useCart from "../../components/useCart"
+import useLike from "../../components/useLike"
 
 
 
@@ -11,13 +12,23 @@ export default function CategorieBook(){
     console.log(book)
     const info = book.book[0]
 
-    const [like, setLike] = useState('basic')
+    const [fav, setFav] = useState('basic')
     const {cart, setCart} = useCart([])
     const [btn, setBtn] = useState('Add to cart')
+    const {like, setLike} = useLike()
 
-    function addLike(){
-        if (like == 'basic' ) setLike('light')
-            else setLike('basic')
+
+    function addLike(id, path, title, price, img){
+        if (fav == 'basic' ) {
+            setFav('light')
+            setLike('add', id, path, title, price, img)
+        }
+            else {
+                setFav('basic')
+                setLike('remove', id)
+            }
+
+            console.log(fav)
     }
 
     function addToCart(){
@@ -73,8 +84,8 @@ export default function CategorieBook(){
                                 onClick={() => { addToCart() }}
                             >{btn}</button>}
                             
-                            <button onClick={addLike} >
-                                <img className={like} src='/heart-15.png' alt="like" />
+                            <button onClick={() => {addLike(info.primary_isbn10, book.path, info.title, info.price, info.book_image )}} >
+                                <img className={fav} src='/heart-15.png' alt="like" />
                                 
                             </button>
                            

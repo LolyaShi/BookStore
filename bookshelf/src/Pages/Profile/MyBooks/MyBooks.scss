@@ -1,0 +1,54 @@
+
+.MyBooks{
+
+    h1{
+        text-align: center;
+    }
+
+    .book-list{
+        list-style: none;
+        margin-top: 20px;
+    }
+    .item{
+        padding: 0 10px;
+        margin: 15px 10px 5px;
+
+        .item-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            div{
+                display: flex;
+                align-items: center;
+
+                .price{
+                    color: #930f0f;
+                    font-weight: 700;
+                    margin: 0 10px;
+                    
+                }
+            }
+        }
+       
+        
+
+        a{
+            color: #fff;
+            text-decoration: none;
+            transition: all .4s;
+        }
+        a:hover{
+            color: #930f0f;
+        }
+    }
+
+    .item::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        margin-top: 20px;
+    }
+}
