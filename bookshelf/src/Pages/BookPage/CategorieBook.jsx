@@ -42,6 +42,9 @@ export default function CategorieBook(){
                 setBtn('In cart')
             }
         }
+        for(let el of like){
+            if(el.id === info.primary_isbn10 ) setFav('light')
+        }
     }, [])
 
     return(

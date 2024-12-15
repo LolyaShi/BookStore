@@ -26,6 +26,7 @@ import useCart from './components/useCart';
 import Cart from './Pages/Cart/Cart';
 import MyBook from './Pages/Profile/MyBooks/MyBooks';
 import Favorite from './Pages/Profile/Favorite/Favorite';
+import MyProfile from './Pages/Profile/MyProfile/MyProfile';
 
 
 const Root = () => {
@@ -71,6 +72,7 @@ const router = createBrowserRouter(
         <Route path='/cart' element={<Cart />} />
         <Route path='/mybooks' element={<MyBook />} />
         <Route path='/myfavorite' element={<Favorite />} />
+        <Route path='/myprofile' element={<MyProfile />} />
     </Route>
   )
 );
