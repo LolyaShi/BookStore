@@ -1,5 +1,45 @@
 .Header{
-  
+    padding: 0 10px;
+    .logo{
+        display: none;
+        font-size: 26px;
+        line-height: 28px;
+        font-weight: 700;
+        margin-left: 10px;
+        
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+    }
+
+    .mini-menu{
+        display: none;
+        align-items: center;
+
+        img{
+            max-width: 30px;
+            filter: invert(100%);
+        }
+
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    .menu{
+        display: none;
+    }
+    
+    .burger{
+        display: none;
+        margin: 0 5px;
+        
+
+       
+    }
+
     .wrapper{
         width: 100%;
         background-color: rgb(18, 17, 17);
@@ -125,4 +165,67 @@
         color: #fff;
         text-decoration: none;
     }
+}
+
+@media(max-width: 767px){
+    .Header{
+        .logo{
+            display: block;
+          }
+        
+          nav{
+            display: none;
+          }
+
+        .burger{
+            display: block;
+            width: 20px;
+            height: 13px;
+            position: relative;
+            .span{
+                width: 20px;
+                height: 2px;
+                background-color: #fff;
+                position: absolute;
+                top: 6px;
+            }
+            .span::before, .span::after{
+                content: "";
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-color: #ffffff;
+                position: absolute;
+                left: 0;
+            }
+            .span::before{
+               top: -6px;
+            }
+            .span::after{
+                top: 6px;
+            }
+        }
+
+        .login{
+            display: none;
+        }
+
+        .menu{
+            display: block;
+        }
+        .mini-menu{
+            display: flex;
+        }
+        
+    }
+
+    .UserPanel{
+        p{
+            display: none;
+        }
+        a{
+            display: none;
+        }
+    }
+ 
 }

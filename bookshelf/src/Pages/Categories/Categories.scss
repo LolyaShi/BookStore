@@ -1,9 +1,10 @@
 .Categories{
+    margin: 50px;
     h1{
         text-align: center;
     }
     .container{
-        margin: 50px;
+      
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -27,6 +28,14 @@
         }
         .categorie:hover a{
             color: black;
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .Categories{
+        .container{
+            flex-direction: column;
         }
     }
 }

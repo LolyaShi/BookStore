@@ -19,8 +19,8 @@ export default function Favorite(){
                                 <img src={item.img} alt="book-cover" />
                             </Link>
                                 <div>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.price}</p>
+                                    <h3 className="title">{item.title}</h3>
+                                    <p className="price">{item.price}</p>
                                 </div>
                            
                         </div>

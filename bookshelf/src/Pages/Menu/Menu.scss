@@ -1,0 +1,81 @@
+.Menu{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    background-color: rgb(33, 29, 29);
+    height: 100%;
+    z-index: 10;
+
+    .search{
+            margin-top: 30px;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            input{
+                flex: 0 1 70%;
+                border-radius: 20px 0 0 20px;
+                border: solid 1px #fff;
+                font-size: 16px;
+                padding: 5px 10px;
+                line-height: 18px;
+            }
+
+            button{
+                flex: 0 1 30%;
+                padding: 5px 10px;
+                font-size: 16px;
+                line-height: 18px;
+                background-color: #a01c1c;
+                border-radius: 0 20px 20px 0;
+
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+    }
+
+    .links{
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+    }
+
+    .login{
+        display: flex;
+        justify-content: center;
+
+        
+    }
+
+    .btn{
+        padding: 5px 20px;
+            font-size: 14px;
+ 
+            background-color: #a01c1c;
+            color: #fff;
+            border-radius: 20px;
+            text-transform: uppercase;
+    }
+    .profile{
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: #a01c1c;
+            font-size: 20px;
+           
+        }
+        button{
+            margin-top: 20px;
+        }
+    }
+}
