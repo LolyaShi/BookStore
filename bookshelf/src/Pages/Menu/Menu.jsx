@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import './Menu.scss'
 
-export default function Menu({openModal, openMenu, token}){
+export default function Menu({openModal, openMenu, token, setToken}){
 
     const search = useRef()
     const [name, setName] =useState('')
@@ -39,13 +39,13 @@ export default function Menu({openModal, openMenu, token}){
                 <div className="profile">
                     <div onClick={openMenu}><Link to={'/myprofile'}>My Profile</Link></div>
                     <button className="btn" onClick={() => {
-                        
+                        setToken(false)
                         openMenu()
                     }}>Log out</button>
                 </div>}
                
             </div>
-            {/* <Login open={modal} close={setModal} setToken={setToken} /> */}
+            
         </div>
     )
 }

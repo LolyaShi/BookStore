@@ -48,7 +48,7 @@ export default function Header({setToken, token, cart}){
 
             <Login open={modal} close={setModal} setToken={setToken} />
 
-            {(menu ? <div className='menu'><Menu openModal={() => {setModal(!modal)}} openMenu={openMenu} token={token} /></div> : <div></div> )}
+            {(menu ? <div className='menu'><Menu openModal={() => {setModal(!modal)}} openMenu={openMenu} token={token} setToken={setToken} /></div> : <div></div> )}
           
         </div>
     )

@@ -37,6 +37,12 @@ main{
   z-index: 1;
 }
 
+@media(max-width: 1024px){
+  .main-layout{
+      flex: 100%;
+  }
+}
+
 @media(max-width: 767px){
   .main-layout{
       flex: 100%;

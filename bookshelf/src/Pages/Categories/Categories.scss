@@ -68,9 +68,13 @@
                 object-fit: contain;
     
             }
-            .book_title{
-                flex: 0 1 60%;
+            .detailes-block{
+                display: flex;
                 margin: 0 30px;
+            }
+            .book_title{
+                flex: 0 1 80%;
+                
 
                 a{
                     text-decoration: none;
@@ -105,5 +109,28 @@
                 }
             }
         }
+    }
+
+   
+}
+
+@media(max-width: 767px){
+    .CategoriePage{
+      
+        .detailes-block{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+
+        
     }
 }

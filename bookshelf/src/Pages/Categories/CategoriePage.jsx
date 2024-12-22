@@ -46,6 +46,7 @@ export default function CategoriePage(){
                         return(
                             <div className="list__item" key={el.primary_isbn10}>
                                 <img src={el.book_image} alt="book-cover" />
+                                <div className='detailes-block'>
                                 <div className="book_title">
                                     <Link to={`/categories/${path}/${el.primary_isbn10}`}><h2>{el.title}</h2></Link>
                                     <h3>{el.author}</h3>
@@ -70,6 +71,8 @@ export default function CategoriePage(){
                                         }
                                     }> Add to cart</button> */}
                                 </div>
+                                </div>
+                                
                             </div>
                         )
                     })}
