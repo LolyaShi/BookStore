@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { fetchTop } from "../../router"
 import './Bestsellers.scss'
+import Loader from "../Loader/Loader"
 
 export default function Bestsellers(){
 
-    const [top, setTop] = useState([])
+    const [top, setTop] = useState()
 
     async function getTop(){
         const results = await fetchTop()
@@ -16,24 +17,31 @@ export default function Bestsellers(){
         getTop()
     }, [])
 
-    return(
-        <div className="Bestsellers">
-            <div className="container">
-                <h1>Bestsellers</h1>
+    if(top){
+        return(
+            <div className="Bestsellers">
+                <div className="container">
+                    <h1>Bestsellers</h1>
 
-                <div className="top_list">
-                    {top.map((el) => {
-                        return(
-                            <div className="list_item" key={el.title}>
-                               <h2>{el.title}</h2>
-                               <p>{el.author}</p>
-                               <p>{el.description}</p>
-                            </div>
-                        )
-                    })}
+                    <div className="top_list">
+                        {top.map((el) => {
+                            return(
+                                <div className="list_item" key={el.title}>
+                                <h2>{el.title}</h2>
+                                <p>{el.author}</p>
+                                <p>{el.description}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    )
+            </div>
+        )
+    }
+    else{
+        return(
+            <Loader />
+        )
+    }
 }
