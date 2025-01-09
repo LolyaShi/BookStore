@@ -36,6 +36,10 @@ export default function UserPanel({openModal, token, setToken, cart}){
         return(
             <div className="UserPanel">
                 <button onClick={openModal}>Log in</button>
+                <Link to={'/cart'}>
+                    <img src="./cart.svg" alt="cart" />
+                    <span className='cartNumber'>{cart.length}</span>
+                </Link>
             </div>
         )
     }

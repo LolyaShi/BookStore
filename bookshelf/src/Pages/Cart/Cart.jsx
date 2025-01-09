@@ -3,6 +3,7 @@ import useCart from "../../components/useCart"
 import { Link } from "react-router-dom"
 import './Cart.scss'
 import { useEffect, useState } from "react"
+import Confirm from "./Confirm"
 
 
 
@@ -24,6 +25,7 @@ export default function Cart(){
 
     const {cart, setCart} = useCart()
     const [totalPrice, setTotalPrice] = useState(0)
+    const [confirm, setConfirm] = useState(false)
 
     const deleteItem = (id) => {
          setCart('remove', id)
@@ -96,10 +98,14 @@ export default function Cart(){
                         <p>Total price: {totalPrice}$</p>
                     </div>
                     <div className="pay-block">
-                        <button className="buy-btn" onClick={ () => addToMyBooks()}>Buy books</button>
+                        <button className="buy-btn" onClick={ () => setConfirm(true)}>Buy books</button>
                     </div>
                     
+
+                    <Confirm confirm={confirm} onClose={()=>{setConfirm(false)}} onConfirm={() => addToMyBooks()} />
                 </div>
+
+               
             )
         }
 }
