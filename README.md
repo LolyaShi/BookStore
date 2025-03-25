@@ -6,7 +6,11 @@
 <h3>Демо</h3>
 
 <h3>Скріншоти</h3>
-
+<img src="./bookshelf/public/1.jpg">
+<img src="./bookshelf/public/2.jpg">
+<img src="./bookshelf/public/3.jpg">
+<img src="./bookshelf/public/4.jpg">
+<img src="./bookshelf/public/5.jpg">
 
 <h3>Функціонал</h3>
 <ul>
