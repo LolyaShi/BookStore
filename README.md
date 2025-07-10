@@ -62,7 +62,7 @@
   <li>SASS - препроцесор для стилів</li>
   <li>Node.js - сервер для авторизації користувача</li>
   <li>Використані API:
-    <p>https://api.nytimes.com</p>
-    <p>https://api.bigbookapi.com</p>
+    <p>https://nytimes.com</p>
+    <p>https://bigbookapi.com</p>
   </li>
 </ul>
